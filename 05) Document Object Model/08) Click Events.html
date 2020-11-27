@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        button {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: #2ddf5c;
+            color: #0e4f1f;
+            border-radius: 10px;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+        }
+
+        button:hover {
+            background-color: azure;
+            cursor: pointer;
+        }
+
+        button:active {
+            background-color: #0e4f1f;
+            color: azure;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        li {
+            width: min-content; /* Sets the width of block level element to whatever content present inside, just like inline elements */
+            font-size: 20px;
+            -webkit-text-stroke: 0.5px black;
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>To make a line through the inner text content of the button</p>
+    <button>Click Me!</button>
+
+    <p>To change body background color</p>
+    <button>Click Me!</button>
+    
+    <ul class="colors">
+        <li>Red</li>
+        <li>Blue</li>
+        <li>Green</li>
+        <li>Purple</li>
+        <li>Yellow</li>
+        <li>Pink</li>
+        <li>Orange</li>
+        <li>White</li>
+    </ul>
+
+    <script src="08) Click Events.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="1) Submit Event.css">
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form class="signup-form">
+        <ul>
+            <li>
+                <label for="firstname">
+                    Firstname: <input type="text" id="firstname" name="FIRSTNAME" placeholder="John">
+                </label>
+                <label for="lastname">
+                    Lastname: <input type="text" id="lastname" name="LASTNAME" placeholder="Doe">
+                </label>
+            </li>
+            <li>
+                <label for="username">
+                    Username: <input type="text" id="username" name="USERNAME" required>
+                </label>
+            </li>
+            <li>
+                <label for="password">
+                    Password: <input type="password" id="password" name="PASSWORD" required>
+                </label>
+            </li>
+            <li>
+                <ul>
+                    <li>
+                        <label for="male">
+                            <input type="radio" id="male" name="GENDER" value="Male"> Male
+                        </label>
+                    </li>
+                    <li>
+                        <label for="female">
+                            <input type="radio" id="female" name="GENDER" value="Female"> Female
+                        </label>
+                    </li>
+                    <li>
+                        <label for="other">
+                            <input type="radio" id="other" name="GENDER" value="Other"> Other
+                        </label>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <label for="birthday">
+                    Birthday: <input type="date" id="birthday" name="BIRTHDAY" required>
+                </label>
+            </li>
+            <li>
+                <label for="agreement">
+                    I agree to the terms and conditions <input type="checkbox" id="agreement" name="terms" required>
+                </label>
+            </li>
+            <li>
+                <input type="submit">
+            </li>
+        </ul>
+    </form>
+
+    <script src="1) Submit Event.js"></script>
+</body>
+</html>

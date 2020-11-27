@@ -1,0 +1,1 @@
+console.log('Inside separate .js file which <script> tag is pointing to which is inside <body> tag.');

@@ -1,0 +1,45 @@
+@font-face {
+    src: url(digital-7.regular.ttf);
+    font-family: digital;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 55px;
+}
+
+.container {
+    width: max-content;
+    box-sizing: content-box;
+    margin: 70px auto;
+    border: 5px solid red;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: black;
+}
+
+.number {
+    text-align: center;
+    font-family: digital;
+    font-size: 80px;
+    color: lime;
+}
+
+.buttons {
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    margin: 20px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}

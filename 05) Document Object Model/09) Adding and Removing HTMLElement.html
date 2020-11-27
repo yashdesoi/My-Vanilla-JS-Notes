@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding and Removing HTMLElements</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+            font-size: 20px;
+            border: 1px solid black;
+            margin: 2px 0;
+            max-width: 180px;
+            background-color: lightgrey;
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+
+        ul {
+            padding-left: 0;
+            margin-top: 0; 
+        }     
+
+        p {
+            font-size: 20px;
+            margin: 50px 0 10px 0;
+        }
+
+        p:first-of-type {
+            margin-top: 0;
+        }
+
+        button {
+            width: 105px;
+            height: 35px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <p>Non standard way of removing and adding (Added items cannot be removed). Once the item is added then preexisting elements also cannot be removed.</p>
+    <ul>
+        <li>Removable</li>
+        <li>Removable</li>
+        <li>Removable</li>
+    </ul>
+
+    <button>Add</button>
+
+    <p>Standard way of removing and adding, but cannot be appended and prepended at the same time (Added items cannot be removed).</p>
+    <ul>
+        <li>Removable</li>
+        <li>Removable</li>
+        <li>Removable</li>
+    </ul>
+
+    <button>Add</button>
+
+    <p>Can be appended and prepended at the same time (Added items cannot be removed).</p>
+    <ul>
+        <li>Removable</li>
+        <li>Removable</li>
+        <li>Removable</li>
+    </ul>
+
+    <button>Add</button>
+
+    <p>Added items can be can be removed</p>
+    <ul>
+        <li>Removable</li>
+        <li>Removable</li>
+        <li>Removable</li>
+    </ul>
+
+    <button>Add</button>
+    
+    <script src="09) Adding and Removing HTMLElement.js"></script>
+</body>
+</html>
