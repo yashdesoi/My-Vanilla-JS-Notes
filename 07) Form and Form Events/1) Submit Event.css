@@ -2,6 +2,25 @@
     box-sizing: border-box;
 }
 
+h1 {
+    text-align: center;
+}
+
+form {
+    width: max-content;
+    margin: auto;
+}
+
 ul {
     list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.gender > label {
+    display: inline-block;
+    margin: 0 3px;
 }

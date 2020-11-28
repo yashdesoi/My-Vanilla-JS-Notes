@@ -15,17 +15,21 @@ form.addEventListener('submit', event => {
 
     // Or we can use the form element itself, and do HTMLFormElement.id.value or HTMLFormElement.name.value to grab the value of the HTMLInputElement, here name and id belongs to respective HTMLInputElement.
     // HTMLFormElement.id.value -->
+    console.log(form.username.value)
     console.log(form.password.value);
     console.log(form.male.value);
     console.log(form.female.value);
     console.log(form.other.value);
+    console.log(form.language.value)
     console.log(form.birthday.value);
     console.log(form.agreement.value);
     console.log('\n');
 
     // HTMLFormElement.name.value --> Best way to grab the user entered values, because it works with <input type="radio">. Each radio buttons have one common name but each one of them have unique ids, which makes it difficult to grab user input
+    console.log(form.USERNAME.value)
     console.log(form.PASSWORD.value);
     console.log(form.GENDER.value);
+    console.log(form.LANGUAGE.value);
     console.log(form.BIRTHDAY.value);
     console.log(form.terms.value);
     
