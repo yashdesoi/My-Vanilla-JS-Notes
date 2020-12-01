@@ -1,0 +1,18 @@
+.filler {
+    width: 164.8px;
+    height: 22px;
+}
+
+.username-field + .filler {
+    margin-left: 73.333px; /* calc(238.133px - 164.8px); */
+}
+
+.password-field + .filler {
+    margin-left: 70px;
+}
+
+
+input:focus {
+    outline: none;
+    border: 2px solid skyblue;
+}

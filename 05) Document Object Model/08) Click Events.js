@@ -1,5 +1,5 @@
 /*
-1) HTMLElement.addEventListner()
+1) HTMLElement.addEventListner('click', callbackFunction)
 */
 
 // .addEventListner() is a method belonging to HTMLElement. It is attached to that element which is expected to undergo an event, it is immediatly called whenever an event has occured uppon that element. Like in click event, element.addEventListner() is called whenever that element is clicked.
