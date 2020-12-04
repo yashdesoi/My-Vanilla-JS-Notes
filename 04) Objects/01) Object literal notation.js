@@ -1,5 +1,4 @@
-// Object literal is similar to python's dictionary. But in python, both key and value
-// must be of some datatype. In javascript its not the case.
+// Object literal is similar to python's dictionary. But in python, both key and value must be of some datatype. In javascript its not the case. In javascript only value must have a datatype, and key is like some sort of variable.
 
 let person = {
     // properties
@@ -20,8 +19,8 @@ console.log(person.languages, '\n');
 
 // Indexing for accesing properties.
 // We have to provide string form of property name, for indexing.
-console.log( person['lastName']);
-console.log( person['location'], '\n');
+console.log(person['lastName']);
+console.log(person['location'], '\n');
 
 
 // We can change the existing properties.
@@ -38,7 +37,7 @@ person['employed'] = false;
 console.log(person, '\n');
 
 
-// Benifits of indexing ove dot notation.
+// Benifits of indexing over dot notation.
 let key = 'gender';
 
 // Following code uses dot notation for creating a new property "gender" for person object. But flaw

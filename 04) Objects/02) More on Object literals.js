@@ -25,7 +25,7 @@ temp[true] = 85;
 
 console.log(temp, '\n');
 
-// To access these keys with string datatypes, since we cannot we cannot use do notation.
+// To access these keys with string datatypes, since we cannot use do notation.
 // Indexing will come to rescue.
 console.log(temp.'3.14'); // Error
 
