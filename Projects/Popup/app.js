@@ -1,6 +1,10 @@
 const button = document.querySelector('.activate');
 const popupWrapper = document.querySelector('.popup-wrapper');
 
+window.setTimeout(() => {
+    popupWrapper.style.display = 'block';
+}, 3000);
+
 button.addEventListener('click', () => {
     popupWrapper.style.display = 'block';
 });

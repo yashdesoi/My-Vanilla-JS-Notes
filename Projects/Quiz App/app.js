@@ -6,6 +6,12 @@ let userAnswers;
 
 form.addEventListener('submit', event => {
     event.preventDefault();
+
+    document.querySelectorAll('main > form > ol > li > label').forEach(element => {
+        element.style.color = 'azure';
+    });
+
+
     let score = 0;
 
     userAnswers = [form.q1.value, form.q2.value, form.q3.value, form.q4.value, form.q5.value, form.q6.value, form.q7.value];
@@ -22,7 +28,12 @@ form.addEventListener('submit', event => {
     let result = scoreBoard.querySelector('span')
     
     // window object with one of its method scrollTo()
-    window.scrollTo(0,0);
+    // window.scrollTo(0,0);
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
 
     scoreBoard.style.display = 'block';
 
@@ -39,14 +50,15 @@ form.addEventListener('submit', event => {
         result.textContent = `${i}%`;
 
         if (i === score) {
+            if (score < 100) {
+                buttonContainer.style.display = 'block';
+            }
             window.clearInterval(timer);
         } else {
             i += 1;
         }
 
     }, 15);
-
-    buttonContainer.style.display = 'block';
 });
 
 buttonContainer.querySelector('button').addEventListener('click', event => {
