@@ -1,0 +1,95 @@
+:root {
+    --borderValue: 2px solid black;
+    font-family: 'Varela Round', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.holder {
+    text-align: center;
+    height: 50px;
+}
+
+.holder > button {
+    width: 110px;
+    height: 50px;
+    border-width: 3px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: 19px;
+    font-family: inherit;
+    display: none;
+}
+
+
+.holder > button:focus {
+    outline: none;
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.block {
+    background-color: moccasin;
+    font-family: 'Comfortaa', cursive;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 25px;
+    cursor: default;
+}
+
+.block:hover {
+    background-color: rgb(255, 238, 206);
+}
+
+.block1 {
+    border-right: var(--borderValue);
+    border-bottom: var(--borderValue);
+}
+
+.block2 {
+    border-right: var(--borderValue);
+    border-bottom: var(--borderValue);
+}
+
+.block3 {
+    border-bottom: var(--borderValue);
+}
+
+.block4 {
+    border-right: var(--borderValue);
+    border-bottom: var(--borderValue);
+}
+
+.block5 {
+    border-right: var(--borderValue);
+    border-bottom: var(--borderValue);
+}
+
+.block6 {
+    border-bottom: var(--borderValue);
+}
+
+.block7 {
+    border-right: var(--borderValue);
+}
+
+.block8 {
+    border-right: var(--borderValue);
+}
+
+.message {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px auto;
+}
