@@ -2,7 +2,8 @@
 1) HTMLElement.classList
 2) HTMLElement.classList.add()
 3) HTMLElement.classList.remove()
-4) HTMLElement.classList.toggle()
+4) HTMLElement.classList.contains('class-name')
+5) HTMLElement.classList.toggle()
 */
 
 // Adding and removing classes with HTMLElement.setAttribute() method.
@@ -27,8 +28,13 @@ console.log( para.classList, typeof para.classList );
 
 // DOMTokenList has following methods to play with.
 para.classList.add('success'); // Adding Class
-para.classList.add('extra'); // Adding Class
+para.classList.add('extra'); // Adding Class (Adding class means appending to class list)
 para.classList.remove('general'); // Removing Class
+
+// .contains() is similar to .includes() but for DOMTokenList
+console.log(para.classList.contains('success'));
+console.log(para.classList.contains('general'));
+// console.log(para.classList.includes('success')); // Error
 
 
 // CHALLENGE

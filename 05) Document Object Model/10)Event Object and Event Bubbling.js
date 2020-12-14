@@ -49,6 +49,7 @@ containerOne.addEventListener('click', event => {
 
 
 // Clever way to add and remove HTMLElements.
+// Removing
 const containerTwo = document.querySelector('.container-two');
 console.log(containerTwo.tagName);
 
@@ -60,7 +61,7 @@ containerTwo.addEventListener('click', event => {
     event.stopPropagation();
 });
 
-
+// Adding
 const buttonThree = document.querySelector('.button-three');
 
 buttonThree.addEventListener('click', event => {
@@ -86,7 +87,7 @@ buttonThree.addEventListener('click', event => {
 
 
 
-// EVENT BUBBLING:- In event bubbling, if an event listner is attached to some element is triggred when that element undergoes that event. Event occuring causes a shockwave like phenomenon which makes the event listner of that child's parent to trigger aswell (only if child's parent has event listner attached with same event type), which inturn makes event listner of parent's parent to triggers also (only if parent's parent has event listner attached with same event type) and so on.
+// EVENT BUBBLING:- In event bubbling, if an event listner attached to some element is triggred when that element undergoes that event. Event occuring causes a shockwave like phenomenon which makes the event listner of that child's parent to trigger aswell (only if child's parent has event listner attached with same event type), which inturn makes event listner of parent's parent to triggers also (only if parent's parent has event listner attached with same event type) and so on.
 
 // To make event bubbling stop, event object has a method event.stopPropagation().
 

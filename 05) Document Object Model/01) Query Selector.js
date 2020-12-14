@@ -65,7 +65,7 @@ for (let i = 0; i < elements.length; i++) {
 console.log('\n');
 
 
-// parentHTMLElement.querySelector() and HTMLElement.querySelectorAll() will select respective HTMLElement(s) (direct aswell as indirect childern) which are inside scope of parentHTMLElement.
+// parentHTMLElement.querySelector() and parentHTMLElement.querySelectorAll() will select respective HTMLElement(s) (direct aswell as indirect childern) which are inside the scope of parentHTMLElement.
 
 // Selects first element in document with particular class.
 element = document.querySelector('.one');

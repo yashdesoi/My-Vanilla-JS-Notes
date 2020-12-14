@@ -3,6 +3,7 @@
 2) HTMLElement.parentElement
 3) HTMLElement.nextElementSibiling
 4) HTMLElement.previousElementSibiling
+5) Array.from(HTMLCollection) --> HTMLCollection converted into an Array
 */
 
 // To grab all the elements inside <article>, we can either do this which will return node list.

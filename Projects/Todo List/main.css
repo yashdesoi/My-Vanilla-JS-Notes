@@ -1,0 +1,75 @@
+:root {
+    font-family: 'Varela Round', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1607920592591-aebc36b403ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+.container {
+    background-color: rgba(138, 43, 226, 0.8);
+    width: calc(60% + 20px);
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.todos {
+    list-style: none;
+    padding: 0;
+}
+
+.todo {
+    background-color: violet;
+    margin: 7px auto;
+    padding: 5px;
+    border-radius: 3px;
+
+    position: relative;
+}
+
+.description {
+    display: block;
+    margin-right: 21px;
+}
+
+.delete {
+    cursor: pointer;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+}
+
+.search-todo,
+.add-todo {
+    width: max-content;
+    margin: auto;
+}
+
+[type='text'] {
+    font-family: inherit;
+    font-size: 20px;
+    width: 40vw;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+[type='text']:focus {
+    outline: 4px dotted orange;
+    outline-offset: 2px;
+}

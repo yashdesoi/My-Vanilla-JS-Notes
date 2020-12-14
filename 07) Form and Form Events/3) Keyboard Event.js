@@ -1,3 +1,5 @@
+// Submit events are hooked to form elements whereas keyup events are hooked to input elements which are inside form elements. But we can also hook keyup events to an entire form an then use event.target.value to listen to particular input field respectively
+
 /*
 1) HTMLFormElement.addEventListner('keyup', callbackFunction)
 2) HTMLInputElement.addEventListner('keyup', callbackFunction) === HTMLFormElement.id/nameOFHTMLInputElement.addEventListner()
@@ -20,6 +22,8 @@ let passwordFiller = document.querySelector('.password-field + .filler');
 let validation_one = false;
 let validation_two = false;
 
+
+// Keyup event hooked up to an entire form
 form.addEventListener('keyup', event => {
     console.log(event)
     console.log(event.target);
@@ -55,6 +59,8 @@ form.addEventListener('keyup', event => {
     }
 });
 
+
+// Keyup event hooked up to an input element
 form.username.addEventListener('keyup', event => {
     if (usernamePattern.test(event.target.value)) {
         usernameFiller.textContent = 'Valid';
