@@ -1,0 +1,28 @@
+@font-face {
+    src: url(digital-7.regular.ttf);
+    font-family: digital;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.clock {
+    font-family: digital;
+    font-size: 70px;
+    text-align: center;
+    background-color: black;
+    border: 5px solid red;
+    border-radius: 10px;
+    color: lime;
+    width: 350px;
+    padding: 30px;
+
+    position: absolute;
+    top: calc(calc(100% - 139.6px) / 2);
+    left: calc(calc(100% - 350px) / 2);
+}

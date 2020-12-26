@@ -31,10 +31,10 @@ para.classList.add('success'); // Adding Class
 para.classList.add('extra'); // Adding Class (Adding class means appending to class list)
 para.classList.remove('general'); // Removing Class
 
-// .contains() is similar to .includes() but for DOMTokenList
+// .contains() is similar to .includes() but for DOMTokenList, HTMLElement.classList.includes() will give an error
 console.log(para.classList.contains('success'));
 console.log(para.classList.contains('general'));
-// console.log(para.classList.includes('success')); // Error
+
 
 
 // CHALLENGE
@@ -58,4 +58,11 @@ para.classList.toggle('error'); // Removed "error" class because following para 
 para = document.querySelector('body > p:nth-of-type(5)');
 para.classList.toggle('extra'); // Added "extra" class because following para didn't had it
 
+
+// Adding and removing multiple classes
+para = document.querySelector('body > p:nth-of-type(6)');
+para.classList.add('general', 'success', 'extra');
+
+para = document.querySelector('body > p:nth-of-type(7)');
+para.classList.remove('general', 'error', 'extra')
 

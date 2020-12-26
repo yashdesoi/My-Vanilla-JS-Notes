@@ -19,3 +19,8 @@ console.log( fruit.includes('fan') );
 
 // 6) .split()
 console.log( fruit.split('n') );
+
+// 7) .trim() deletes the spaces before and after the string
+fruit = ' Ban ana   ';
+console.log(fruit);
+console.log( fruit.trim() );

@@ -1,0 +1,26 @@
+[
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "age": 22,
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "age": 18,
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "age": 35,
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "age": null,
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+]

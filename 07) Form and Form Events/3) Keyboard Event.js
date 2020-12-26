@@ -5,6 +5,7 @@
 2) HTMLInputElement.addEventListner('keyup', callbackFunction) === HTMLFormElement.id/nameOFHTMLInputElement.addEventListner()
 3) callbackFunction(event), event --> Keyboard event object.
 4) event.target === HTMLInputElement --> Incase of event listner attached to HTMLFormElement.
+5) HTMLFormElement.reset() --> Resets all the input fields
 */
 
 // Keyboard event provides live feedback
@@ -22,12 +23,17 @@ let passwordFiller = document.querySelector('.password-field + .filler');
 let validation_one = false;
 let validation_two = false;
 
+let i = 0;
+
 
 // Keyup event hooked up to an entire form
 form.addEventListener('keyup', event => {
-    console.log(event)
-    console.log(event.target);
-    console.log(event.target.getAttribute('id'));
+    if (i < 2) {
+        console.log(event)
+        console.log(event.target);
+        console.log(event.target.getAttribute('id'));
+        i += 1;
+    }
 
     if (event.target.getAttribute('id') === 'username') {
         if (usernamePattern.test(event.target.value)) {
@@ -87,8 +93,11 @@ form.password.addEventListener('keyup', event => {
 form.addEventListener('submit', event => {
     event.preventDefault();
     if (validation_one && validation_two) {
+        // If form is valid, form will be reset
+        form.reset();
         console.log('Form Submitted');
     } else {
+        // If form is invalid, form will be kept as it is for user to to check form filling mistakes
         console.log('Please enter valid details');
     }
     

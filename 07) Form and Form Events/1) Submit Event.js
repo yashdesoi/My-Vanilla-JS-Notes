@@ -21,6 +21,9 @@ form.addEventListener('submit', event => {
     // When we submit the form, by default the page refreshes and all the values of the <input> fields appear in the address bar (Also the password). To prevent this we can do the following.
     event.preventDefault()
 
+    // The HTMLFormElement property elements returns an HTMLFormControlsCollection listing all the form controls contained in the <form> element. You can access a particular form control in the returned collection by using either an index or the element's name or id.
+    console.log(form.elements);
+
     // To get the values of the <input> fields entered by the user, we can either grab a specific element and do HTMLInputElement.value property.
     console.log(username.value);
     console.log('\n\n');
@@ -70,3 +73,13 @@ form.addEventListener('submit', event => {
     console.log(form.terms.value);
     
 });
+
+// Document forms are members of the special collection document.forms. We can access them without query selecting them.
+console.log(document.forms);
+console.log(document.forms[0]);
+console.log(document.forms[0].USERNAME);
+console.log(document.forms[0].PASSWORD);
+console.log(document.forms[0].GENDER);
+console.log(document.forms[0].LANGUAGE);
+console.log(document.forms[0].BIRTHDAY);
+console.log(document.forms[0].terms);

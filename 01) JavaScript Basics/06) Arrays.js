@@ -30,7 +30,7 @@ let result = arrayOfStrings.join('-');
 console.log(result);
 console.log(typeof result);
 
-// 3) .concat() concatenate two lists. I python we do this by simply by + operator [1,2,3] + [4,5] --> [1,2,3,4,5]
+// 3) .concat() concatenate two lists. In python we do this simply by + operator, [1,2,3] + [4,5] --> [1,2,3,4,5]
 result = arrayOfNumbers.concat([7,8,9,10]);
 console.log(result);
 

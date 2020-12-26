@@ -3,9 +3,8 @@ body > * {
 }
 
 .general {
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
+    width: max-content;
+    margin: 16px auto;
     text-align: center;
     border-width: 1px;
     border-style: solid;
