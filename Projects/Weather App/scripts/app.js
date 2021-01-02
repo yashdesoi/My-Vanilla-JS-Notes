@@ -11,6 +11,8 @@ const weatherCondition = document.querySelector('.weather-condition');
 const temperature = document.querySelector('.temperature > span');
 const errorMessage = document.querySelector('.message');
 
+
+// Function which calls getCity and getWeather from forecast.js Since both of these functions returns promise, hence resolving them is an asynchronous task therefore updateCity must use async keyword so that we can use await inside of it.
 const updateCity = async function(cityName) {
     const cityInfo = await getCity(cityName);
     const weather = await getWeather(cityInfo.Key);
@@ -24,6 +26,8 @@ const updateCity = async function(cityName) {
     };
 };
 
+
+// Function which updates the UI
 const updateUI = function(details) {
     // if (details.isDayTime) {
     //     image.style.backgroundImage = "url('img/day.svg')";
@@ -41,6 +45,23 @@ const updateUI = function(details) {
     temperature.textContent = details.temperature;
 };
 
+
+// Whichever last valid city name user has entered will be used to initialize the UI for his next session.
+if (localStorage.getItem('city') !== null) {
+    const cityName = localStorage.getItem('city');
+    updateCity(cityName)
+        .then(details => {
+            localStorage.setItem('city', cityName);
+            updateUI(details)
+            card.style.display = 'block';
+        })
+        .catch(() => {
+            errorMessage.style.display = 'block';
+        });
+}
+
+
+// Submit event listner attached to form
 form.addEventListener('submit', event => {
     event.preventDefault();
 
@@ -51,6 +72,7 @@ form.addEventListener('submit', event => {
     
     updateCity(cityName)
         .then(details => {
+            localStorage.setItem('city', cityName);
             updateUI(details)
             card.style.display = 'block';
         })

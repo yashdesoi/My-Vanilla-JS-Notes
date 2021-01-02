@@ -7,7 +7,7 @@ request.addEventListener('readystatechange', () => {
         let data = request.responseText;
         console.log(data, typeof data);
 
-        // To convert the string into raw JSON format, we have to use built in javascript object JSON which has a method called parse() which will parse the string and returns raw JSON data.
+        // To convert the JSON string into javascript object in JSON format, we have to use built in javascript object JSON which has a method called parse() which will parse the string and returns raw JSON data.
         data = JSON.parse(data);
         console.log(data, typeof data);
 

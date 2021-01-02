@@ -1,35 +1,63 @@
 let addTodoForm = document.querySelector('.add-todo');
 let todos = document.querySelector('.todos');
 
+
+// Creating a todo
+const createTodo = function(text) {
+    // Creating brand new elements
+    let todo = document.createElement('li');
+    let description = document.createElement('span');
+    let del = document.createElement('i');
+
+    // Adding a text inside description element
+    description.textContent = text;
+
+    // Giving class(es) to todo, description and del elements
+    todo.classList.add('todo');
+    description.classList.add('description');
+    del.classList.add('delete', 'fas', 'fa-trash-alt');
+
+    // Appending description and del element inside todo element
+    todo.append(description);
+    todo.append(del);
+
+    // Appending todo element inside todos element
+    todos.append(todo);
+
+    // Re-setting input field inside form
+    // addTodoForm.addedTodo.value = ''; // Method 1
+    addTodoForm.reset(); // Method 2
+}
+
+// Initialize the UI when app is loaded
+const size = localStorage.length;
+if (size > 0) {
+    for (let i=0; i<size; i++ ) {
+        const key = localStorage.key(i);
+        const text = localStorage.getItem(key);
+        if (Number(key)) {
+            // NaN === NaN --> false
+            // NaN --> is falsy
+            console.log(key, text);
+            createTodo(text);
+        }
+    }
+}
+
+
 // Adding a todo
 addTodoForm.addEventListener('submit', event => {
     event.preventDefault();
     let text = addTodoForm.addedTodo.value.trim();
 
     if (text.length > 0) {
-        // Creating brand new elements
-        let todo = document.createElement('li');
-        let description = document.createElement('span');
-        let del = document.createElement('i');
-
-        // Adding a text inside description element
-        description.textContent = text;
-
-        // Giving class(es) to todo, description and del elements
-        todo.classList.add('todo');
-        description.classList.add('description');
-        del.classList.add('delete', 'fas', 'fa-trash-alt');
-
-        // Appending description and del element inside todo element
-        todo.append(description);
-        todo.append(del);
-
-        // Appending todo element inside todos element
-        todos.append(todo);
-
-        // Re-setting input field inside form
-        // addTodoForm.addedTodo.value = ''; // Method 1
-        addTodoForm.reset(); // Method 2
+        createTodo(text);
+        const size = localStorage.length;
+        if (size === 0) {
+            localStorage.setItem(1, text);
+        } else {
+            localStorage.setItem(size + 1, text);
+        }
     }
 });
 
@@ -42,6 +70,17 @@ todos.addEventListener('click', event => {
 
     if (event.target.classList.contains('delete')) {
         event.target.parentElement.remove();
+
+        const text = event.target.previousElementSibling.textContent;
+        const size = localStorage.length;
+
+        for (let i=0; i<size; i++) {
+            const key = localStorage.key(i);
+            if (Number(key) && localStorage.getItem(key) === text) {
+                localStorage.removeItem(key);
+                break;
+            }
+        }
     }
 });
 
