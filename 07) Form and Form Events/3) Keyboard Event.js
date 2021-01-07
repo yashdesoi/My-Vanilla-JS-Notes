@@ -1,4 +1,4 @@
-// Submit events are hooked to form elements whereas keyup events are hooked to input elements which are inside form elements. But we can also hook keyup events to an entire form an then use event.target.value to listen to particular input field respectively
+// Submit events are hooked to form elements whereas keyup events are hooked to input elements which are inside form elements. But we can also hook keyup events to an entire form an then use event.target.value to listen to particular input field respectively. Keyup events trigger everytime something is typed in input field.
 
 /*
 1) HTMLFormElement.addEventListner('keyup', callbackFunction)

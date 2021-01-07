@@ -29,18 +29,17 @@ const createTodo = function(text) {
     addTodoForm.reset(); // Method 2
 }
 
+
 // Initialize the UI when app is loaded
-const size = localStorage.length;
-if (size > 0) {
-    for (let i=0; i<size; i++ ) {
-        const key = localStorage.key(i);
-        const text = localStorage.getItem(key);
-        if (Number(key)) {
-            // NaN === NaN --> false
-            // NaN --> is falsy
-            console.log(key, text);
+for (let i=0; i<localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const text = localStorage.getItem(key);
+    if (key === 'todos') {
+        const todos = JSON.parse(localStorage.getItem(key));
+        for (let text of todos) {
             createTodo(text);
         }
+        break;
     }
 }
 
@@ -52,11 +51,21 @@ addTodoForm.addEventListener('submit', event => {
 
     if (text.length > 0) {
         createTodo(text);
-        const size = localStorage.length;
-        if (size === 0) {
-            localStorage.setItem(1, text);
-        } else {
-            localStorage.setItem(size + 1, text);
+        let hasTodos = false;
+        for (let i=0; i<localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key === 'todos') {
+                hasTodos = true;
+                const todos = JSON.parse(localStorage.getItem(key));
+                todos.push(text);
+                localStorage.setItem(key, JSON.stringify(todos));
+                break;
+            }
+        }
+
+        if (!hasTodos) {
+            const todos = [text];
+            localStorage.setItem('todos', JSON.stringify(todos));
         }
     }
 });
@@ -72,13 +81,13 @@ todos.addEventListener('click', event => {
         event.target.parentElement.remove();
 
         const text = event.target.previousElementSibling.textContent;
-        const size = localStorage.length;
 
-        for (let i=0; i<size; i++) {
+        for (let i=0; i<localStorage.length; i++) {
             const key = localStorage.key(i);
-            if (Number(key) && localStorage.getItem(key) === text) {
-                localStorage.removeItem(key);
-                break;
+            if (key === 'todos') {
+                let todos = JSON.parse(localStorage.getItem(key));
+                todos = todos.filter(item => item !== text);            
+                localStorage.setItem('todos', JSON.stringify(todos));
             }
         }
     }

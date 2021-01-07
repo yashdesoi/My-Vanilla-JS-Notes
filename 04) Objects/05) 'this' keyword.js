@@ -5,8 +5,7 @@ let myObject = {
     key1: 'value1',
     key2: 'value2',
     insideMyObject: function(){
-        // "this" will point to myObject, since it is not used
-        // inside myObject.
+        // "this" will point to myObject, since it is used inside myObject.
         console.log(this);
     }
 };

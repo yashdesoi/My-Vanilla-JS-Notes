@@ -1,3 +1,5 @@
+// Async/Await are just syntactic sugar to Promises in javascript.
+
 const tick = (new Date()).getTime();
 
 // The word “async” before a function means the function always returns a promise. Other values are wrapped in a resolved promise automatically. What ever the function returns becomes the resolved value.

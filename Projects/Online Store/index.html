@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YFB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1 class="title">Yash Foods & Beverages</h1>
+        <button class="cart-icon">
+            <div class="number-of-items-in-cart">0</div>
+        </button>
+    </header>
+    <!-- Body -->
+    <main>
+        <form class="search-product" autocomplete="off">
+            <input type="text" name="product" placeholder="Search">
+        </form>
+
+        <ul class="products">
+            <!-- <li class="product">
+                <div class="image">
+                    <span class="category">Dal</span>
+                </div>
+                <div class="details">
+                    <div class="name">Moong Dal</div>
+                    <div class="quantity">Qty: <span class="value">1 kg</span></div>
+                    <div class="mrp">MRP: &#8377;<span class="value">144</span></div>
+                    <div class="discounted-price">Discounted Price: &#8377;<span class="value">126</span></div>
+                </div>
+                <button class="add">Add</button>
+            </li> -->
+        </ul>
+    </main>
+    <!-- Cart -->
+    <div class="cart-wrapper">
+        <div class="cart">
+            <i class="close far fa-times-circle"></i>
+            <h2 class="cart__title">My Cart</h2>
+            <div class="cart__header">
+                <div class="cart__item-name">Name</div>
+                <div class="cart__item-weight">Weight</div>
+                <div class="cart__item-quantity">Quantity</div>
+                <div class="cart__item-price">Price</div>
+                <div class="cart__item-remove">Remove</div>
+            </div>
+            <ol class="cart__items">
+                <!-- <li class="cart__item">
+                    <div class="cart__item-name">Sabudana</div>
+                    <div class="cart__item-weight">500 gm</div>
+                    <input class="cart__item-quantity" name="quantity" type="number" min="1" max="10" value="1">
+                    <div class="cart__item-price">
+                        &#8377;<span class="value">39</span>
+                    </div>
+                    <div class="cart__item-remove">
+                        <i class="remove fas fa-trash-alt"></i>
+                    </div>
+                </li> -->
+            </ol>
+            <hr>
+            <div class="cart__footer">
+                <div class="cart__item-name"></div>
+                <div class="cart__item-weight"></div>
+                <div class="cart__item-quantity">Total:-</div>
+                <div class="cart__item-price">
+                    &#8377;<span class="value">0</span>
+                </div>
+                <div class="cart__item-remove"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
