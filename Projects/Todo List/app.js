@@ -23,10 +23,6 @@ const createTodo = function(text) {
 
     // Appending todo element inside todos element
     todos.append(todo);
-
-    // Re-setting input field inside form
-    // addTodoForm.addedTodo.value = ''; // Method 1
-    addTodoForm.reset(); // Method 2
 }
 
 
@@ -68,6 +64,10 @@ addTodoForm.addEventListener('submit', event => {
             localStorage.setItem('todos', JSON.stringify(todos));
         }
     }
+
+    // Re-setting input field inside form
+    // addTodoForm.addedTodo.value = ''; // Method 1
+    addTodoForm.reset(); // Method 2
 });
 
 

@@ -2,9 +2,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-family: 'Varela Round', sans-serif;
+}
+
 body {
     margin: 0;
-    font-family: 'Varela Round', sans-serif;
 }
 
 /* ----------------------- Header ----------------------- */
@@ -55,6 +58,7 @@ header {
 .number-of-items-in-cart {
     background-color: red;
     color: white;
+    font-family: 'Varela Round', sans-serif;
     font-size: 12px;
     border-radius: 5px;
     padding: 0 5px;
@@ -70,7 +74,7 @@ main {
     padding: 15px;
 }
 
-.search-product > input {
+form.search-product > input {
     width: 375px;
     margin-left: 60px;
     padding: 5px;
@@ -79,11 +83,21 @@ main {
     color: black;
     font-family: inherit;
     font-size: 20px;
+    vertical-align: middle;
 }
 
-.search-product > input:focus {
+form.search-product > input:focus {
     outline: none;
     box-shadow: 0 0 0 3px skyblue;
+}
+
+.reset-icon {
+    display: inline-block;
+    font-size: 25px;
+    vertical-align: middle;
+    margin-left: 5px;
+    color: grey;
+    cursor: pointer;
 }
 
 .products {
@@ -93,9 +107,7 @@ main {
 
 .product {
     display: inline-block;
-    /* width: 450px; */
     width: 375px;
-    /* width: 30%; */
     margin: 0 60px 40px 60px;
     border-radius: 10px;
     background-color: wheat;
@@ -161,6 +173,21 @@ main {
     outline: none;
 }
 
+.message {
+    font-size: 25px;
+    margin-top: 250px;
+    text-align: center;
+    display: none;
+}
+
+.error {
+    color: red;
+}
+
+.not-found {
+    color: black;
+}
+
 /* ----------------------- Cart ----------------------- */
 .cart-wrapper {
     background-color: rgba(0, 0, 0, 0.5);
@@ -182,7 +209,7 @@ main {
 
     position: relative;
     left: calc(calc(100% - 550px) / 2);
-    top: 80px;
+    top: 90px;
 }
 
 .close {
@@ -233,6 +260,7 @@ main {
 
 .cart__item-quantity{
     width: 15%;
+    margin-left: 15px;
     font-family: inherit;
 }
 
@@ -243,12 +271,13 @@ main {
 
 .cart__item > .cart__item-quantity:focus {
     outline: none;
-    box-shadow: 0 0 0 2px orangered;
+    box-shadow: 0 0 0 2px skyblue;
 }
 
 .cart__item-price {
-    width: 20%;
-    text-align: center;
+    width: 15%;
+    margin-left: 20px;
+    /* text-align: center; */
 }
 
 .cart__item-remove {
@@ -256,7 +285,19 @@ main {
     text-align: center;
 }
 
-.cart__item > .cart__item-remove > .remove:hover {
+.cart__item > .cart__item-remove {
+    font-size: 18px;
+}
+
+.cart__item > .cart__item-remove:hover {
     cursor: pointer;
     color: red;
+}
+
+form.purchase > button {
+    display: none;
+    margin: 10px auto 0 auto;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 7px 5px;
 }
