@@ -9,6 +9,7 @@ const cart = document.querySelector('.cart-wrapper');
 const items = document.querySelector('.cart__items');
 const totalPrice = document.querySelector('.cart__footer > .cart__item-price > .value');
 const purchaseForm = document.querySelector('form.purchase');
+const checkoutFormWrapper = document.querySelector('.checkout-form__wrapper');
 
 const productList = {};
 
@@ -159,7 +160,7 @@ items.addEventListener('click', event => {
     }
 });
 
-// Changing quantity of items 1
+// Changing quantity of items (by clicking)
 items.addEventListener('click', event => {
     event.stopPropagation();
 
@@ -183,7 +184,7 @@ items.addEventListener('click', event => {
     }
 });
 
-// Changing quantity of items 2
+// Changing quantity of items (by keyboard)
 purchaseForm.addEventListener('keyup', event => {
     event.stopPropagation();
     const name = event.target.previousElementSibling.previousElementSibling.textContent;
@@ -206,7 +207,8 @@ purchaseForm.addEventListener('keyup', event => {
 
 purchaseForm.addEventListener('submit', event => {
     event.preventDefault();
-    alert('Your order is placed :)');
+    cart.style.display = 'none';
+    checkoutFormWrapper.style.display = 'block';
 });
 
 // Searching product
@@ -265,5 +267,15 @@ resetIcon.addEventListener('click', event => {
         productElements.forEach(productElement => {
             productElement.style.display = 'inline-block';
         });
+    }
+});
+
+// Going back to cart from checkout form
+checkoutFormWrapper.addEventListener('click', event => {
+    event.stopPropagation();
+
+    if (event.target.className.includes('go-back')) {
+        cart.style.display = 'block';
+        checkoutFormWrapper.style.display = 'none';
     }
 });

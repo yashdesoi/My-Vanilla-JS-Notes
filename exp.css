@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+/* label {
+    display: block;
+}
+
+textarea {
+    vertical-align: top;
+} */
+
+label,
+label > .description {
+    display: block;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 14px;
+}
+
+.mobile-number-prefix {
+    display: inline-block;
+    border: 1px solid black;
+    border-right: none;
+    vertical-align: middle;
+    font-size: 16px;
+    height: 23px;
+}
+
+#mobile-number {
+    border-left: none;
+    font-family: inherit;
+    font-size: 16px;
+    height: 23px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+input, textarea,
+input:active, textarea:active {
+    border-color: black;
+    border-width: 1px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
