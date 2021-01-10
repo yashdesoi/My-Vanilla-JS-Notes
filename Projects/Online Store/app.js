@@ -10,6 +10,7 @@ const items = document.querySelector('.cart__items');
 const totalPrice = document.querySelector('.cart__footer > .cart__item-price > .value');
 const purchaseForm = document.querySelector('form.purchase');
 const checkoutFormWrapper = document.querySelector('.checkout-form__wrapper');
+const checkoutForm = document.querySelector('form.checkout-form');
 
 const productList = {};
 
@@ -72,19 +73,15 @@ fetchData()
 
 
 // Toggling display of cart
+let cartOpen = false;
 cartIcon.addEventListener('click', event => {
     event.stopPropagation();
-    cart.style.display = 'block';
-    document.querySelector('header').style.position = 'static';
-    document.querySelector('main').style.marginTop = '0px';
-});
-
-cart.addEventListener('click', event => {
-    event.stopPropagation();
-    if (event.target.className.includes('cart-wrapper') || event.target.className.includes('close')) {
-        cart.style.display = 'none';
-        document.querySelector('header').style.position = 'fixed';
-        document.querySelector('main').style.marginTop = '80px';
+    if (!cartOpen) {
+        cartOpen = true;
+        cart.style.right = '0';
+    } else {
+        cartOpen = false;
+        cart.style.right = '-500px';
     }
 });
 
@@ -207,7 +204,8 @@ purchaseForm.addEventListener('keyup', event => {
 
 purchaseForm.addEventListener('submit', event => {
     event.preventDefault();
-    cart.style.display = 'none';
+    cartOpen = false;
+    cart.style.right = '-500px';
     checkoutFormWrapper.style.display = 'block';
 });
 
@@ -252,7 +250,7 @@ searchForm.addEventListener('submit', event => {
     searchForm.reset();
 });
 
-// Reseting UI
+// Reseting UI from search
 resetIcon.addEventListener('click', event => {
     event.stopPropagation();
     notFoundMessage.style.display = 'none';
@@ -274,8 +272,108 @@ resetIcon.addEventListener('click', event => {
 checkoutFormWrapper.addEventListener('click', event => {
     event.stopPropagation();
 
-    if (event.target.className.includes('go-back')) {
-        cart.style.display = 'block';
+    if (event.target.className.includes('close') || event.target.className === 'checkout-form__wrapper') {
+        cartOpen = true;
+        cart.style.right = '0';
         checkoutFormWrapper.style.display = 'none';
+    }
+});
+
+// Dealing with checkout form
+let validName = false;
+let validMobileNumber = false;
+
+checkoutForm.name.addEventListener('keyup', event => {
+    event.stopPropagation();
+    const namePattern = /^[A-Za-z ]{2,}$/;
+
+    if (!namePattern.test(checkoutForm.name.value)) {
+        event.target.nextElementSibling.textContent = 'Invalid name';
+        event.target.nextElementSibling.style.color = 'red';
+        validName = false;
+    } else {
+        event.target.nextElementSibling.textContent = 'Valid';
+        event.target.nextElementSibling.style.color = 'lime';
+        validName = true;
+    }
+});
+
+checkoutForm.mobileNumber.addEventListener('keyup', event => {
+    event.stopPropagation();
+    const mobileNumberPattern = /^\d{10}$/;
+
+    if (!mobileNumberPattern.test(checkoutForm.mobileNumber.value)) {
+        event.target.nextElementSibling.textContent = 'Invalid mobile number';
+        event.target.nextElementSibling.style.color = 'red';
+        validMobileNumber = false;
+    } else {
+        event.target.nextElementSibling.textContent = 'Valid';
+        event.target.nextElementSibling.style.color = 'lime';
+        validMobileNumber = true;
+    }
+});
+
+const createAndDownloadTextFile = function(data) {
+    // let dataString = `
+    // Name:- ${data.name}\n
+    // Mobile number:- ${data.mobileNumber}\n
+    // Address:- ${data.address}\n
+    // Products:-\n
+    // `;
+    let dataString = `Name:- ${data.name}\nMobile number:- ${data.mobileNumber}\nAddress:- ${data.address}\nProducts:-\n`;
+
+    data.items.forEach(item => {
+        dataString += `\t${item.name}, ${item.weight}, qty: ${item.quantity}, ₹${item.price}\n`;
+    });
+
+    dataString += `Total:- ₹${data.total}`;
+    
+    // Convert the text to BLOB.
+    const textToBLOB = new Blob([dataString], { type: 'text/plain' });
+    const num = (new Date()).getTime();
+    const sFileName = `Order ${num}.txt`;
+
+    let newLink = document.createElement("a");
+    newLink.download = sFileName;
+
+    if (window.webkitURL != null) {
+        newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+    }
+    else {
+        newLink.href = window.URL.createObjectURL(textToBLOB);
+        newLink.style.display = "none";
+        document.body.appendChild(newLink);
+    }
+
+    newLink.click();
+};
+
+checkoutForm.addEventListener('submit', event => {
+    if (validName && validMobileNumber) {
+        const details = {
+            name: checkoutForm.name.value,
+            mobileNumber: checkoutForm.mobileNumber.value,
+            address: checkoutForm.address.value,
+            items: [],
+            total: totalPrice.textContent
+        }
+
+        document.querySelectorAll('.cart__item').forEach(item => {
+            const itemDetails = {
+                name: item.children[0].textContent,
+                weight: item.children[1].textContent,
+                quantity: item.children[2].value,
+                price: item.children[3].children[0].textContent
+            };
+            details.items.push(itemDetails);
+        });
+
+        console.log(details);
+        createAndDownloadTextFile(details);
+        alert('Thankyou! You will receive your order shortly :)');
+        
+    } else {
+        event.preventDefault();
+        alert('Please enter valid info');
     }
 });

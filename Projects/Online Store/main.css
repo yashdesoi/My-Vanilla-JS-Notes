@@ -190,37 +190,23 @@ form.search-product > input:focus {
 
 /* ----------------------- Cart ----------------------- */
 .cart-wrapper {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    display: none;
+    background-color: rgb(255, 255, 0, 0.8);
+    width: 500px;
+    height: calc(100% - 80px);
     overflow-y: scroll;
 
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 80px;
+    right: -500px;
     z-index: 2;
+
+    transition: all 250ms linear;
 }
 
 .cart {
-    background-color: white;
-    width: 550px;
-    padding: 20px 15px;
-    border-radius: 10px;
+    padding: 20px;
 
     position: relative;
-    left: calc(calc(100% - 550px) / 2);
-    top: 90px;
-}
-
-.close {
-    font-size: 18px;
-    cursor: pointer;
-    color: red;
-
-    position: absolute;
-    top: 5px;
-    right: 5px;
 }
 
 .cart__title {
@@ -323,22 +309,22 @@ form.purchase > button {
 
     position: relative;
     left: calc(calc(100% - 550px) / 2);
-    top: calc(calc(100% - 433px) / 2);
+    top: calc(calc(100% - 428px) / 2);
 }
 
-.go-back {
-    font-size: 20px;
+.close {
+    font-size: 18px;
     cursor: pointer;
-    color: navy;
+    color: red;
 
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 5px;
+    right: 5px;
 }
 
 .checkout-form__title {
     text-align: center;
-    margin: 10px 0;
+    margin: 0 0 15px 0;
 }
 
 .checkout-form > label {
@@ -392,6 +378,13 @@ form.purchase > button {
     border-left: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+.validity {
+    font-size: 12px;
+    text-align: right;
+    width: 250px;
+    height: 14.4px;
 }
 
 #address {
