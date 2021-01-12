@@ -39,7 +39,7 @@ cheeta.run(25);
 // Usually we don’t want to totally replace a parent method, but rather to build on top of it to tweak or extend its functionality. We do something in our method, but call the parent method before/after it.
 
 // Classes provide "super" keyword for that. We can use following versions of it:-
-// 1) super.method(...) to call a parent method.
+// 1) super.methodName(...) to call a parent method.
 // 2) super(...) to call a parent constructor (inside our constructor only).
 
 // For example, let rabbit autohide when stopped;
