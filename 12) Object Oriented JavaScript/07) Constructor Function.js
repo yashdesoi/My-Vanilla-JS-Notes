@@ -24,7 +24,7 @@ u.speak();
 In constructor function above, line 3 and 9 gets automated because of 'new' keyword.*/
 
 
-// Since function is an object, its __proto__ has a property named .prototype This property is used only when function is used as a constructor. Whenever a new instance an object is created using 'new' operator, its prototype is set to whatever we assign to constructorFunction.prototype
+// Since function is an object, its __proto__ has a property named .prototype This property is used only when function is used as a constructor. Whenever a new instance an object is created using 'new' operator, its prototype points to an object we assign to F.prototype
 User.prototype.birthday = function() {
     this.age += 1;
 };
@@ -33,7 +33,24 @@ console.log(u.age);
 u.birthday();
 console.log(u.age);
 
-// All the methods belonging to an object must be present inside its __proto__. This way is memory efficient, because since all the instances of an objects have only one prototype in the memory, to which __proto__ of that instance points to. And since objects have different properties but there methods are always same, hence they are stored in __proto__
+// All the methods belonging to an object must be present inside its __proto__. This way is memory efficient, because since all the instances of an objects have only one prototype in the memory, to which __proto__ of that instance points to. And since objects have different properties but there methods are always same, hence they are stored in __proto__.
+
+// The above instance of User object 'u' acts like an instance of Array, Date or Function object. Array 'array' has its own prototype array.__proto__ aswell as, its prototype also as base object prototype array.__proto__.__proto__
+
+const Temp = {
+    name: 'Khabib',
+    age: 31,
+    speak() {
+        console.log(`My name is ${this.name}, I'm ${this.age} years old.`);
+    },
+    birthday() {
+        this.age += 1;
+    }
+}
+
+console.log(Temp);
+
+
 
 
 
