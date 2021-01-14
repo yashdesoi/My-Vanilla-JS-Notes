@@ -20,7 +20,7 @@ const userTwo = {
 userTwo.speak();
 
 
-// We can create an instance of an object by using class constructor, which is pretty much similar to __init__ magic method in python and this is similar to self.
+// We can create an instance of an object by using class constructor, which is pretty much similar to __init__ magic method in python and this is similar to self. constructor() runs automatically when a new instance of an object is created.
 class User {
     constructor(name, age) {
         this.name = name;
