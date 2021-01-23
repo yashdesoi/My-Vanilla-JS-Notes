@@ -6,7 +6,8 @@
 5) window.alert()
 6) window.setTimeout()
 7) window.scrollTo()
-8) window.setInterval()
+8) HTMLElement.scrollTo()
+9) window.setInterval()
 */
 
 // Window object is a global object in JavaScript. 

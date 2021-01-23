@@ -32,7 +32,7 @@ const removeRecipe = function(id) {
 
 // In previous example we saw how to add, delete and retrieve the data from firestore. But adding and deleting to firestore do not dynamically change our UI, for that we need to refresh our page so that the 'retrieve' script can run and change our UI according to the data present in the firestore (after adding and deleting).
 // But to make it dynamic, firebase gives us an event listner which listens to all the changes happening in our database in real-time. That is callback function inside onSnapshot() will run each time when we add/delete from our database. The callback function takes a parameter 'snapshot'.
-// Initially, when we load our HTML, whatever data present in our database comes as a change of type 'added'. Hence following event listner runs first when we open our app.
+// This real-time listner is exactly like event-listner in javascript. Whenever it is exectuted in the script it is sent to Web API and immediatley 1st event is triggred, because before everything it scans the firestore for what ever documents are present in the collection. And what ever doccument is present they are considered as added. And after that whenever some change occurs to collection then only it will trigger.
 db.collection('recipes').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
         const doc = change.doc; // Returns document object
