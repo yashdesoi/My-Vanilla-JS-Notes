@@ -13,3 +13,12 @@ let html = `
     <p>${content}</p>
 `;
 console.log(html);
+
+// String with '' or "" requires \n for new line
+sentence = 'hello\nworld';
+console.log(sentence);
+
+// But template strings do not
+sentence = `hello
+world`;
+console.log(sentence);
