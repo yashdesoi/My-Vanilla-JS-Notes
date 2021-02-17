@@ -2,7 +2,7 @@
 
 console.log('Start');
 
-let userData = function(userName) {
+let getUserData = function(userName) {
     const data = setTimeout(() => {
         // Return inside setTimeout doesn't belongs to the parent function userData nor setTimeout, instead since it is present inside callback function of setTimeout hence it belong to this callback function only which is accessible inside setTimeout. We cannot use this data.
         
@@ -17,7 +17,7 @@ let userData = function(userName) {
     return data; // Following returns the setTimeout object
 };
 
-console.log(userData('Yash'));
+console.log(getUserData('Yash'));
 
 console.log('End');
 

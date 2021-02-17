@@ -9,6 +9,7 @@ let promise = new Promise((resolve) => {
         resolve(4);
         console.log('Text 4');
     }, 3000);
+    
     console.log('Text 5');
 });
 
