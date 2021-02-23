@@ -1,29 +1,23 @@
-const functionOne = () => {
+// Whenever a function is passed as an argument, then that function is known as callback function.
+const callback = function() {
     return 5
 };
 
-const functionTwo = callbackFunction => {
+const foo = function(callback) {
     let value = 6;
-    return value + callbackFunction();
+    return value + callback();
 };
 
-// Whenever a function is passed as an argument, then that function is known as callback function.
+console.log(foo(callback));
 
-console.log(functionTwo(functionOne));
 
 // We can even pass the function directly as an argument in function call.
+const bar = function(num, arr, callback) {
+    arr.push(num);
+    callback(arr);
+};
 
-let temp = functionTwo(function(){
-    return 4;
+bar(8, [1,5,13], arr => {
+    console.log(arr);
 });
-
-console.log(temp);
-
-// As an arrow function.
-
-temp = functionTwo(() => {
-    return 8;
-});
-
-console.log(temp);
 
