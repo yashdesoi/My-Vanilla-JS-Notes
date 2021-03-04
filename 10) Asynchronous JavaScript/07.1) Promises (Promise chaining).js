@@ -1,4 +1,4 @@
-// The whole thing works, because a call to promise.then returns a promise, so that we can call the next .then on it. When a handler returns a value, it becomes the result of that promise, so the next .then is called with it.
+// The whole thing works, because a call to promise.then() returns a promise, so that we can call the next .then() on it. When a handler returns a value, it becomes the result of that promise, so the next .then is called with it.
 
 const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
