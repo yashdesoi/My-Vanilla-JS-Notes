@@ -28,7 +28,7 @@ console.log();
 const array = [2, 3, 4, 9, 7];
 
 console.log(...array);
-
+//      ^
 // Above statement is similar to following
 console.log(2, 3, 4, 9, 7);
 
