@@ -35,6 +35,9 @@ form.addEventListener('keyup', event => {
         i += 1;
     }
 
+    // Incase of keyup event attached to form element, event.target is going to be the respective input fields.
+    console.log(event.target.value);
+
     if (event.target.getAttribute('id') === 'username') {
         if (usernamePattern.test(event.target.value)) {
             event.target.style.borderColor = 'green';
@@ -91,14 +94,14 @@ form.password.addEventListener('keyup', event => {
 });
 
 form.addEventListener('submit', event => {
-    event.preventDefault();
     if (validation_one && validation_two) {
         // If form is valid, form will be reset
         form.reset();
-        console.log('Form Submitted');
+        alert('Form Submitted');
     } else {
         // If form is invalid, form will be kept as it is for user to to check form filling mistakes
-        console.log('Please enter valid details');
+        alert('Please enter valid details');
+        event.preventDefault();
     }
     
 });

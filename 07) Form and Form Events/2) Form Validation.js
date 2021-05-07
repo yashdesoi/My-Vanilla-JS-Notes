@@ -7,6 +7,11 @@ filler.style.fontSize = '13px';
 form.addEventListener('submit', event => {
     event.preventDefault();
 
+    // In case of submit event attached to form element, event.target is going to be the form element itself.
+    console.log(event.target);
+    console.log(event.target.email);
+    console.log(event.target.email.value);
+
     if (emailPattern.test(form.email.value)){
         filler.textContent = 'Valid email address';
         filler.style.color = 'green';
