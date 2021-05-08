@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Making HTTP requests using fetchAPI</h3>
+        <div class="my-3">
+            <h5>Get request</h5>
+            <button class="btn btn-primary get-posts">Get posts</button>
+        </div>
+        <div class="my-3">
+            <h5>Delete request</h5>
+            <button class="btn btn-danger delete-post">Delete post</button>
+        </div>
+        <div class="my-3 row">
+            <h5>Post request</h5>
+            <form name="sendPostForm" novalidate autocomplete="off" class="border rounded p-3 col-sm-8">
+                <div class="form-group my-2">
+                    <label>Title:</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div class="form-group my-2">
+                    <label>Body:</label>
+                    <textarea name="body" class="form-control" cols="30" rows="5"></textarea>
+                </div>
+                <button class="btn btn-success btn-sm">Submit</button>
+            </form>
+        </div>
+        <div class="my-3 row">
+            <h5>Put request</h5>
+            <form name="updatePostForm" novalidate autocomplete="off" class="border rounded p-3 col-sm-8">
+                <div class="form-group my-2">
+                    <label>Title:</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div class="form-group my-2">
+                    <label>Body:</label>
+                    <textarea name="body" class="form-control" cols="30" rows="5"></textarea>
+                </div>
+                <button class="btn btn-success btn-sm">Update</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="Making HTTP requests.js"></script>
+</body>
+</html>
