@@ -2,6 +2,8 @@
 const before = new Date('October 1 1998 13:55:02');
 
 // We can use all the methods onto this object
+console.log(before.toString());
+console.log(before.toString().replace(/\([a-z ]*\)/i,'').trim());
 console.log(before.getFullYear());
 console.log(before.getMonth());
 console.log(before.getDate());
