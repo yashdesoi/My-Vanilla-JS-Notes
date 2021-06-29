@@ -72,3 +72,21 @@ let s2 = s1;
 s1 += ' boy';
 console.log(s1);
 console.log(s2);
+
+// GOOD EXAMPLE FOR PASS BY VALUE
+const function1 = function() {
+  const obj = {
+    name: 'James',
+    age: 52
+  }
+
+  function2(obj);
+
+  console.log(obj);
+}
+
+const function2 = function(object) {
+  object.name = 'Charles';
+}
+
+function1();
